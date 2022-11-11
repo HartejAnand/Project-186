@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>A-Frame SPE Particle System Component Example</title>
+
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    
+    <script src="https://unpkg.com/aframe-spe-particles-component@^1.0.4/dist/aframe-spe-particles-component.min.js"></script>
+   
+</head>
+
+<body>
+    <a-scene id="scene">
+       <a-entity 
+        position="0 1 0 " 
+        spe-particles="        
+            color: red, orange, yellow; 
+            distribution: sphere; 
+            randomize-velocity: true;
+            radius: 1; 
+            particle-count: 800; 
+            velocity: 1; 
+            velocity-spread: 15; 
+            drag: 1; 
+            max-age: 5;
+            duration: -1,
+            blending: additive;
+            active-multiplier: 1000; 
+            size: 1, 1, 1, 0">
+    </a-entity>
+    <a-scene id="scene">
+        <a-entity 
+         position="0 1 0 " 
+         spe-particles="        
+             color: yellow, orange, red; 
+             distribution: sphere; 
+             randomize-velocity: true;
+             radius: 1; 
+             particle-count: 800; 
+             velocity: 1; 
+             velocity-spread: 15; 
+             drag: 1; 
+             max-age: 5;
+             duration: -1,
+             blending: additive;
+             active-multiplier: 1000; 
+             direction: backward;
+             size: 1, 1, 1, 0">
+     </a-entity>
+
+    <a-scene id="scene">
+        <a-entity 
+            position="25 1 0 " 
+            spe-particles="        
+                color: green, blue, purple; 
+                randomize-velocity: true;
+                radius: 1; 
+                particle-count: 100; 
+                velocity: 0 10 0;
+                rotation-axis: 0 0 1; 
+                rotation: 120; 
+                rotation-spread: 120;
+                drag: 1; 
+                duration: -1,
+                blending: additive;
+                active-multiplier: 1000; 
+                size: 1, 1, 1, 0">
+        </a-entity>
+
+        <a-entity
+            position="-40 -10 0"
+            spe-particles__smoke= "velocity: .4 2 0; velocity-spread: 1.4 0 1.4; particle-count: 50; max-age: 4; size: 8,16; opacity: 0,1,0; color: #666,#222"
+            spe-particles__fire=  "color: red; texture-frames: 5 5; velocity: .4 .1 0; acceleration: 0 2 0; acceleration-spread: 0 2 0; velocity-spread: .4 0 .4; particle-count: 15; max-age: 1; size: 4,8; size-spread: 2; opacity: 1,0; wiggle: 0 1 0; blending: additive"
+            position="0 0 -10">
+        </a-entity>
+
+            <a-entity position="30 0 0"
+            spe-particles="particle-count: 2000; velocity: 3 1 1; max-age: 1; distribution: disc; active-multiplier: 10000; size: 0.01,20; radius: 10, color: violet                rotation: 120; 
+            rotation-spread: 120;">
+        </a-entity>
+        
+        <a-sky color="#000000"></a-sky>
+        <a-camera position="0 0 30"></a-camera>
+    </a-scene>
+</body>
+
+</html>
